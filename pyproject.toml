@@ -1,0 +1,16 @@
+[project]
+name = "dingtalk-mcp-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp>=3.11.18",
+    "bs4>=0.0.2",
+    "dotenv>=0.9.9",
+    "html2text>=2025.4.15",
+    "mcp[cli]>=1.6.0",
+    "openai>=1.76.0",
+    "packaging>=25.0",
+    "playwright>=1.51.0",
+]
