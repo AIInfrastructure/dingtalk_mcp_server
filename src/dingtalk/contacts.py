@@ -1684,13 +1684,7 @@ class DingtalkContactsServer(DingtalkServer):
         url = f"https://api.dingtalk.com/v1.0/contact/orgAccounts/ownedOrganizations?userId={userId}"
         return await self.get_new(url)
 
-
-async def serve():
-    _mcp_server = MCPServer(name="DingtalkContactsServer")
-    dingtalk_server = DingtalkContactsServer()
-
-    @_mcp_server.list_tools()
-    async def handle_list_tools() -> list[types.Tool]:
+    def list_tools(self) -> list[types.Tool]:
         """
         List all available tools.
         """
@@ -4373,6 +4367,14 @@ async def serve():
                 },
             )
         ]
+
+async def serve():
+    _mcp_server = MCPServer(name="DingtalkContactsServer")
+    dingtalk_server = DingtalkContactsServer()
+
+    @_mcp_server.list_tools()
+    async def handle_list_tools() -> list[types.Tool]:
+        return dingtalk_server.list_tools()
 
     @_mcp_server.call_tool()
     async def handle_call_tool(
