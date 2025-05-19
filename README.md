@@ -43,7 +43,7 @@ dingtalk_mcp_server 是钉钉开放接口对应的 MCP Server，让你可以使�
 使用 MCP Inspector 进行调试:
 
 1. 启动Inspector：
-```mcp dev src/dingtalk/contacts.py```
+```mcp dev src/main.py```
 2. 在WebUI中调试
 
 # 支持的能力
